@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 mongoose.connect("mongodb+srv://atharvkhamkar:2002@cluster0.mhn2z1e.mongodb.net/notesdb").then(function () {
     
     app.get("/", function (req, res) {
-        const response = { message: "API Works!" };
+        const response = {statuscode: res.statusCode,message: "API Works!" };
         res.json(response);
     });
     const noteRouter = require('./routes/Note')
